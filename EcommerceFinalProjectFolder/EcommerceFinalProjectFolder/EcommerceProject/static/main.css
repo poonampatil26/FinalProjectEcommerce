@@ -1,0 +1,167 @@
+/* Importing the fonts */
+		@import url(
+'https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+		* {
+			margin: 0;
+			padding: 0;
+			outline: none;
+			box-sizing: border-box;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		/* Body of the page */
+		body {
+			background: #f2f2f2;
+		}
+
+		/* Styling all the elements in nav as a whole */
+		nav {
+			background: #99149B;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			height: 70px;
+			padding: 0 100px;
+		}
+
+		/* Styling the logo */
+		nav .logo {
+			color: #fff;
+			font-size: 30px;
+			font-weight: 600;
+			letter-spacing: -1px;
+		}
+
+		/* Styling all the nav items as a whole */
+		nav .nav-items {
+			display: flex;
+			flex: 1;
+			padding: 0 0 0 200px;
+		}
+
+		/* Styling the list items in the nav tag */
+		nav .nav-items li {
+			list-style: none;
+			padding: 0 10px;
+		}
+
+		/* Styling each list items */
+		nav .nav-items li a {
+			color: #fff;
+			font-size: 15px;
+			font-weight: 500;
+			text-decoration: none;
+		}
+
+		/* Setting the hover colour on the list items*/
+
+		nav .nav-items li a:hover {
+			color: #19191b;
+		}
+
+		nav .searchbar {
+			position: relative;
+		}
+
+		/* Styling the search box where the
+			input would be given */
+		nav .searchbar input[type="text"] {
+			border: 0;
+			padding: 0;
+			width: 0px;
+			height: 35px;
+			border-radius: 3px;
+			transition: all 0.3s ease;
+		}
+
+		/* Styling the search bar icon */
+		nav .searchbar .icon {
+			display: flex;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 35px;
+			height: 100%;
+			background: none;
+			border-radius: 3px;
+			color: #fff;
+			transition: all 0.5s 0.3s ease;
+		}
+
+		nav .searchbar .icon i {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			cursor: pointer;
+		}
+
+		nav .searchbar .icon.active {
+			background: #062333;
+			transition: all 0.3s ease;
+		}
+
+		nav .searchbar input[type="text"].active {
+			width: 250px;
+			padding: 0 10px;
+			transition: all 0.5s 0.2s ease;
+		}
+
+		nav .licon li {
+			list-style: none;
+			display: flex;
+		}
+
+		nav .licon li a {
+			padding: 0 20px;
+		}
+
+		/* Changing the colour of the login
+			icon when hovered over*/
+
+		.fa-user-circle:hover {
+			color: #0e0d0d !important;
+		}
+
+
+
+
+
+/*footer*/
+.col_white_amrc { color:#FFF;}
+footer { width:100%; background-color:#263238; min-height:250px; padding:10px 0px 25px 0px ;}
+.pt2 { padding-top:40px ; margin-bottom:20px ;}
+footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+.mb10 { padding-bottom:15px ;}
+.footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
+.footer_ul_amrc li {padding:0px 0px 5px 0px;}
+.footer_ul_amrc li a{ color:#CCC;}
+.footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
+.fleft { float:left;}
+.padding-right { padding-right:10px; }
+
+.footer_ul2_amrc {margin:0px; list-style-type:none; padding:0px;}
+.footer_ul2_amrc li p { display:table; }
+.footer_ul2_amrc li a:hover { text-decoration:none;}
+.footer_ul2_amrc li i { margin-top:5px;}
+
+.bottom_border { border-bottom:1px solid #323f45; padding-bottom:20px;}
+.foote_bottom_ul_amrc {
+	list-style-type:none;
+	padding:0px;
+	display:table;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.foote_bottom_ul_amrc li { display:inline;}
+.foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
+
+.social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
+.social_footer_ul li { padding-left:20px; padding-top:10px; float:left; }
+.social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
+.social_footer_ul li i {  width:20px; height:20px; text-align:center;}
+
+/* Credit to https://bootsnipp.com/snippets/bxDBA */

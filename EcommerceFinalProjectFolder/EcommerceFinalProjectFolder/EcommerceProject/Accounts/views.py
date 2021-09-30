@@ -73,3 +73,5 @@ def SellerShowView(request):
     return render(request, tempalte_name, context)
 
 
+def homeView(request):
+    return render(request, 'Accounts/home.html',{})
