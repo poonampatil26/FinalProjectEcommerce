@@ -1,15 +1,17 @@
-from django.urls import path
-from .views import LoginView, RegisterView, SellerLoginView, SellerRegisterView, SellerShowView, ShowView, homeView
+
+from django.urls import path,include
+from .views import seller_loginview,customer_loginview,seller_registerview,customer_registerview,customer_logout_view,seller_logout_view
 
 
 
 urlpatterns=[
-    path('reg/',RegisterView,name='register'),
-    path('log/',LoginView,name='login'),
-    path('show/',ShowView,name='show'),
-    path('sreg/',SellerRegisterView,name='sellerregister'),
-    path('slog/',SellerLoginView,name='sellerlogin'),
-    path('sshow/',SellerShowView,name='sellershow'),
-    path('home/', homeView, name='home'),
+    path('customerregister/',customer_registerview,name='customerregister'),
+    path('customerlogin/',customer_loginview,name='customerlogin'),
+    path('sellerregister/',seller_registerview,name='sellerregister'),
+    path('sellerlogin/',seller_loginview,name='sellerlogin'),
+    path('customerlogout/',customer_logout_view,name='customerlogout'),
+    path('sellerlogout/',seller_logout_view,name='sellerlogout'),
+
+    path('',include('django.contrib.auth.urls'))
 
 ]

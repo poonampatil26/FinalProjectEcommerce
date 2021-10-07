@@ -19,10 +19,12 @@ class CustomerCreationForm(UserCreationForm):
         return user
 
 class SellerCreationForm(UserCreationForm):
+    name = forms.CharField(max_length=64)
     company_name=forms.CharField(max_length=50)
     gst_no=forms.CharField(max_length=200)
     address=forms.CharField(max_length=1000)
     bank_account=forms.IntegerField()
+
     class Meta:
         model = CustomUser
         fields = ('mobile_no','email')
@@ -35,7 +37,6 @@ class SellerCreationForm(UserCreationForm):
         b=self.cleaned_data.get('bank_account')
         c=self.cleaned_data.get('company_name')
         g=self.cleaned_data.get('gst_no')
+        name=self.cleaned_data.get('name')
         customer = Seller.objects.create(user=user,company_name=c,gst_no=g,address=a,bank_account=b)
         return user
-
-

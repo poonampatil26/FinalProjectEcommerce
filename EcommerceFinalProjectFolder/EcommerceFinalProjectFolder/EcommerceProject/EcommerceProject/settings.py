@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2s5*a#vf3_4-05bezaoffgdr1j_c)0k#*ya1l92+$e)=6f(x5q'
+SECRET_KEY = 'django-insecure-78$uc557_p(fz(2bs-8ak3(m5kwdch3fm!s0nwq@-bdb8^izy('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Accounts',
+    'Seller',
+    'Customer',
+    'crispy_forms',
+    'django_filters',
+
+
 ]
+
+CRISPY_TEMPLATE_PACK='bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,8 +84,15 @@ WSGI_APPLICATION = 'EcommerceProject.wsgi.application'
 
 DATABASES = {
     'default': {
+        # Settings for sqlite
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+
+        # Custom settings for MySQL db
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'EcommerceProject',
+        # 'USER':'root',
+        # 'PASSWORD':'root123'
     }
 }
 
@@ -119,8 +134,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ['static']
 
+STATICFILES_DIRS=['static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -128,3 +143,14 @@ STATICFILES_DIRS = ['static']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'Accounts.CustomUser'
+
+import os
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+
+MEDIA_URL='/media/'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS= True
+EMAIL_PORT = 587
+EMAIL_HOST_USER= 'kusumdipke@gmail.com'
+EMAIL_HOST_PASSWORD='Kusum@123'
