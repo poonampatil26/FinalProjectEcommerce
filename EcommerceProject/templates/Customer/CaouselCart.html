@@ -1,0 +1,123 @@
+<style>
+  .col-md-3 {
+    display: inline-block;
+    margin-left: -4px;
+  }
+
+  .col-md-3 {
+    width: 100%;
+    height: auto;
+  }
+
+  body .carousel-control-indicator li {
+    background-color: blue;
+  }
+
+  body .carousel-control-prev-icon body .carousel-control-next-icon {
+    background-color: blue;
+  }
+
+  body .no-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .carousel-control-prev-icon {
+    background: black no-repeat center center;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+  }
+
+  .carousel-control-next-icon {
+    background: black no-repeat center center;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+
+  }
+
+  body .carousel-indicators {
+    bottom: 0;
+  }
+
+  .carousel-indicators .active {
+    background-color: blue;
+  }
+</style>
+
+
+<div class="container">
+  <h2>Laptops</h2>
+  <div class="row">
+    {% for l in Laptops %}
+    <div class="col-lg-4">
+      <div class="card" style="width: 30rem;">
+        <img src="{{l.image.url}}" width="{{380}}" height="{{200}}" class="card-img-top" alt="...">
+        <div class="card-body" style="text-align:center">
+          <h3 class="card-title">{{l.brand_name}} {{l.name}}</h3>
+          <h5 class="card-text">{{l.RAM}} GB RAM | {{l.ROM}} GB ROM</h5>
+          <h5 class="card-text">11th Gen {{l.processor}} Processor</h5>
+          <h5 class="card-text">{{l.warranty}} Year Warranty</h5>
+          <h4 class="card-text">Price: {{l.price}} Rs</h4>
+          <a href="" class="btn btn-primary">View</a>
+          <!--          <hr>-->
+<!--          <a href="" class="btn btn-primary">Add to Cart</a>-->
+          <a href="{% url 'customerlaptopitem' l.pk %}" class="btn btn-success">Add to Cart</a>
+        </div>
+      </div>
+      <br>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+<br>
+<hr>
+
+<div class="container">
+  <h2>Smartphones</h2>
+  <div class="row">
+    {% for m in Mobiles %}
+    <div class="col-lg-4">
+      <div class="card" style="width: 30rem;">
+        <img src="{{m.image.url}}" width="{{30}}" height="{{200}}" class="card-img-top" alt="...">
+        <div class="card-body" style="text-align:center">
+          <h3 class="card-title">{{m.brand_name}} {{m.name}}</h3>
+          <h5 class="card-text">{{m.RAM}} GB RAM | {{m.ROM}} GB ROM </h5>
+          <h5 class="card-text">{{m.processor}} Processor}</h5>
+          <h5 class="card-text">{{m.warranty}} Year Handset Warranty</h5>
+          <h4 class="card-text">Price: {{m.price}} Rs</h4>
+          <a href="" class="btn btn-primary">View</a>
+          <!--          <hr>-->
+          <a href="{% url 'customermobileitem' m.pk %}" class="btn btn-primary">Add to Cart</a>
+        </div>
+      </div>
+      <br>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<br>
+<hr>
+
+<div class="container">
+  <h2>Buy Grocery</h2>
+  <div class="row">
+    {% for g in Groceries %}
+    <div class="col-lg-4">
+      <div class="card" style="width: 30rem;">
+        <img src="{{g.image.url}}" width="{{350}}" height="{{200}}" class="card-img-top" alt="...">
+        <div class="card-body" style="text-align:center">
+          <h3 class="card-title">{{g.product_name}}</h3>
+          <h5 class="card-text">{{g.quantity}} Kg</h5>
+          <h4 class="card-text">Price : {{g.price}} Rs.</h4>
+
+          <a href="" class="btn btn-primary">View</a>
+          <!--          <hr>-->
+          <a href="{% url 'customergroceryitem' g.pk %}" class="btn btn-primary">Add to Cart</a>
+        </div>
+      </div>
+      <br>s
+    </div>
+    {% endfor %}
+  </div>
+</div>

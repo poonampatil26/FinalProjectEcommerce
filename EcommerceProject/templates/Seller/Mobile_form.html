@@ -1,0 +1,27 @@
+{% extends 'Seller/Seller_Base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Mobile</title>
+{% endblock %}
+
+
+
+{% block content %}
+<br>
+<h2 style="text-align:center">Add Mobile Details</h2>
+<hr>
+                <div class="container" style="text-align:right">
+    <a class="btn btn-info" href="{% url 'cfm' %}" style="text-align:center">Create Fake Mobile</a>
+    </div>
+</div>
+<br>
+<div class="container">
+    <form method="post" enctype="multipart/form-data" class="jumbotron">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" value="Add Mobile" class="btn btn-success">
+        <button class="btn btn-info"><a href="{% url 'addproduct' %}" style="color:white;">Back</a></button>
+    </form>
+
+{% endblock %}
