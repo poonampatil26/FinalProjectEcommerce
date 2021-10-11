@@ -46,3 +46,4 @@ class CustomerAddress(models.Model):
     country = models.ForeignKey(Country, on_delete=models.CASCADE, blank=True, null=True)
     state = models.ForeignKey(State, on_delete=models.CASCADE, blank=True, null=True)
     city=models.ForeignKey(City,on_delete=models.CASCADE,blank=True, null=True)
+

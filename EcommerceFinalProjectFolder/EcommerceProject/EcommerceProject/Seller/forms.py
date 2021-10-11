@@ -6,6 +6,9 @@ class LaptopModelForm(forms.ModelForm):
         model=Laptop
         fields='__all__'
         exclude = ['seller']
+        labels = {
+
+        }
 
 class MobileModelForm(forms.ModelForm):
     class Meta:

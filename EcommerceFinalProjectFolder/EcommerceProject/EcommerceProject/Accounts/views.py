@@ -2,7 +2,9 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from .models import CustomUser, Customer, Seller
 from .forms import CustomerCreationForm, SellerCreationForm
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm, SetPasswordForm
+
 
 
 def customer_registerview(request):
